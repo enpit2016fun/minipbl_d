@@ -37,10 +37,10 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:20px;
     height:100%;
-    margin:0px;
-    padding:0px;
+    margin:20px;
+    padding:20px;
     text-transform:uppercase;
     width:100%;
 }

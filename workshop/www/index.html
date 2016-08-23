@@ -33,16 +33,58 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title>つくしっこ保育園　アカウント登録</title>
+        <script>
+            function clickButton(){
+                alert("登録が完了した！Nice！！")
+            }
+        </script>
+        
     </head>
+    
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <font size="6">アカウント登録</font>
+        
+        <form name="js">
+        <p>保護者氏名：<input type="text" name="pa_name" value=""><p>
+        <p>児童氏名：<input type="text" name="kid_name" value=""><p>
+        <p>住所：<input id ="jusyobox" type="text" name="jusyo" value=""><p>
+        </form>
+        
+        <form name="graduate">
+        <p>卒業年：
+            <select name="linkselect" onCharnge="kakunin()">
+                <option value="">選択してください</option>
+                <option value="">2016年</option>
+                <option value="">2017年</option>
+                <option value="">2018年</option>
+            </select><p>
+        </form>
+        
+        <form>
+        <p>兄弟姉妹の有無：
+        <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">いない</label>
+        <input id="Checkbox2" type="checkbox" /><label for="Checkbox2">通園中（我が保育園に）</label>
+        <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">卒業</label>
+        <p>
+        </form>
+        
+        <form name="form1" action="">
+            <p>メール配信希望：
+            <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">希望する</label>
+            <input id="Checkbox2" type="checkbox" /><label for="Checkbox2">希望しない</label>
+            <p>
+        </form>
+        
+        <form>
+        <p>アドレス：<input type="text" name="mail_adress" value=""><p>
+        </form>
+        
+        <form>
+            <input type="button"  style="width:24pt" value="登録" onclick="clickButton()">
+        </form>
+        
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
