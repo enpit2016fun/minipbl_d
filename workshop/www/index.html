@@ -34,12 +34,33 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>つくしっこ保育園　アカウント登録</title>
+        
+        <!--//////確認////////
+        ///登録ボタン押下/////-->
         <script>
             function clickButton(){
-                alert("登録が完了した！Nice！！")
+                //window.open("tmp.html");
+                var pa_name=document.js.pa_name.value; //親の名前
+                var kid_name=document.js.kid_name.value; //
+                var jusyo=document.js.jusyo.value; //
+                var gra_year=document.graduate.linkselect.value; //
+
+                window.alert("登録が完了した！Nice！！/n"+pa_name+"さん"+kid_name+jusyo+gra_year)
             }
+        
+        function onRadioButton(){
+            var check1=document.form1.radio1.checked;
+            var check2=document.form1.radio2.checked;
+        }
         </script>
         
+        <script>
+            
+            if(check1==true){
+                
+            }
+        
+        </script>
     </head>
     
     <body>
@@ -48,16 +69,20 @@
         <form name="js">
         <p>保護者氏名：<input type="text" name="pa_name" value=""><p>
         <p>児童氏名：<input type="text" name="kid_name" value=""><p>
-        <p>住所：<input id ="jusyobox" type="text" name="jusyo" value=""><p>
+        <p>住所：<input type="text" name="jusyo" value=""><p>
         </form>
         
         <form name="graduate">
         <p>卒業年：
             <select name="linkselect" onCharnge="kakunin()">
                 <option value="">選択してください</option>
-                <option value="">2016年</option>
-                <option value="">2017年</option>
-                <option value="">2018年</option>
+                <option value="2016">2016年</option>
+                <option value="2017">2017年</option>
+                <option value="2018">2018年</option>
+                <option value="2019">2019年</option>
+                <option value="2020">2020年</option>
+                <option value="2021">2021年</option>
+
             </select><p>
         </form>
         
@@ -71,20 +96,19 @@
         
         <form name="form1" action="">
             <p>メール配信希望：
-            <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">希望する</label>
-            <input id="Checkbox2" type="checkbox" /><label for="Checkbox2">希望しない</label>
+            <input id="radio1" type="radio" name="mail" value="1" onchange="onRadioButton();" checked="checked"/>希望する
+            <input id="radio2" type="radio" name="mail" value="2" onchange="onRadioButton();"/>希望しない
             <p>
         </form>
         
         <form>
-        <p>アドレス：<input type="text" name="mail_adress" value=""><p>
-        </form>
+         <p>アドレス：<input type="email" name="mail_adress" value=""><p>
+         </form>
         
         <form>
             <input type="button"  style="font-size:16pt; width:40pt; height:24pt" value="登録" onclick="clickButton()">
         </form>
-        
-        
+   
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
