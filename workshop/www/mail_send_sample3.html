@@ -12,8 +12,9 @@
 
 </head>
 <body>
+<form name="fm">
 <p>メール内容<br>
-<textarea name="example2" cols="100" rows="50">
+<textarea name="tarea" cols="100" rows="50">
 平成 28 年 9 月 20 日
 
 第６回 春の大運動会のお知らせ
@@ -33,8 +34,8 @@
 すのでご注意下さい(1 日 500 円）。 
 
 </textarea></p>
-
-<input type='hidden' id='hidden_data' value='送信したい情報をここに記載'>
+</form>
+<input type='hidden' id='hidden_data' value=document.fm.tarea.value>
     <button id='mail'>メール送信</button>
 
 </body>
