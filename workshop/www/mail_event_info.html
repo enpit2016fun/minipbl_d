@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" /> 
@@ -6,12 +6,17 @@
 	<title>eventinfo</title>
  	</head>
 	<body>
-		<form action="mail_event_conf.html" method="get">
-			<p><label>イベント名：<input type="text" name="eventname" size="40" maxlength="20"></label></p>
-			<p><label>日時：<input type="text" name="eventdate" size="40" maxlength="20"></label></p>
-			<p><label>場所：<input type="text" name="eventstate" size="40" maxlength="20"></label></p>
+	<h2>詳しい情報を入力、もしくは修正してください</h2>
+		<form action="#" method="get" accept-charset="" name="form" onsubmit="return event_send();">
+			<p>イベント名：<input type="text" name="eventname" size="40" maxlength="20"></p>
+			<p>日時：<input type="text" name="eventdate" size="40" maxlength="20"></p>
+			<p>場所：<input type="text" name="eventstate" size="40" maxlength="20"></p>
 			<textarea name="eventinfo" rows="4" cols="40"> イベント内容の説明 </textarea>
-			<p><input type="submit" value="送信する"></p>
+			<p><input type="submit" value="決定">
+			<input type="button" value="戻る" onclick="history.back()">
+			</p>
 		</form>
-    </body>
+		<script type="text/javascript" src="event_conf_send.js"></script>
+   
+	</body>
 </html>
