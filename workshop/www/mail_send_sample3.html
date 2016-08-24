@@ -5,17 +5,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="">
-<script src="send.js" type="text/javascript" charset="utf-8" ></script>
-<script type="text/javascript" src="./script2_1.js">
-var tarea  = document.fm.tarea.value;
-</script>
 
 <title>メール内容</title>
+<link rel="stylesheet" href="">
+<script src="send.js" type="text/javascript" charset="utf-8" ></script>
+
 </head>
 <body>
 <p>メール内容<br>
-<textarea name="tarea" cols="100" rows="50">
+<textarea name="example2" cols="100" rows="50">
 平成 28 年 9 月 20 日
 
 第６回 春の大運動会のお知らせ
@@ -35,15 +33,10 @@ var tarea  = document.fm.tarea.value;
 すのでご注意下さい(1 日 500 円）。 
 
 </textarea></p>
-<p>
 
-<input type="button" name="send" value="送信する" onClick="kakunin(1)">
-</p>
-
-<form>
-<input type='hidden' id='hidden_data' value=tarea>
+<input type='hidden' id='hidden_data' value='送信したい情報をここに記載'>
     <button id='mail'>メール送信</button>
-</form>
 
 </body>
 </html>
+
