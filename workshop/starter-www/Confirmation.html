@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> 
+<title>アカウント登録確認</title>
+
+<script type="text/javascript">
+<!---
+get_text = document.location.search;
+text = get_text.substring(1,get_text.length);
+
+koron = text.replace( /=/g , "：" ) ;
+hogosya = koron.replace( /hogosya/g , "保護者氏名" ) ;
+child = hogosya.replace( /child/g , "児童氏名" ) ;
+postnum = child.replace( /postnum/g , "〒" ) ;
+
+
+kekka = postnum.split("&");
+
+//-->
+</script>
+
+
+
+</head>
+<body>
+以下の内容で登録します。<br/>
+
+<script type="text/javascript">
+  document.write(kekka[0]);
+    document.write("<br/>");
+  document.write(kekka[1]);
+    document.write("<br/>");
+  document.write(kekka[2]);
+  
+</script>
+
+</body>
+</html>
