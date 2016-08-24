@@ -64,7 +64,7 @@ function check(){
   
 
   
-<form method="POST" action="example.cgi" name="form1" onSubmit="return check()">
+<form method="get" action="Confirmation.html" name="form1" onSubmit="return check()">
 
   <p>保護者氏名：<br><input type="text" name="hogosya_name" size="40"> （必須）</p>
   <p>児童氏名：<br><input type="text" name="gidou_name" size="40"> （必須）</p>
@@ -72,17 +72,9 @@ function check(){
   <p>住所：<br><input type="text" name="field1" size="40"> （必須）</p>
 </form>
 
-<!--<script>
-var dt = new Date();
-
-//３か月後
-dt.setMonth(dt.getMonth() + 3);
-
-
-</script>-->
-<form name="selbox">
+<form name="selbox" method="get" action="Confirmation.html">
   　<p>卒業年：
-    　<select name="league" onchange="yearSet()">
+    　<select name="卒業年" onchange="yearSet()">
       <option value="">選択してください</option>
       　<option value="">document.write(dt.getFullYear() );</option>
       　<option value="">dt.setMonth(dt.getMonth() - 1);</option>
@@ -96,13 +88,14 @@ dt.setMonth(dt.getMonth() + 3);
 
 
 
+<form name="mail" method="get" action="Confirmation.html">
   <p>メール配信：<br>
   <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">希望する</label>
     <input id="Checkbox2" type="checkbox" /><label for="Checkbox2">希望しない</label><br /></p>
 
 <p><input type="submit" value="送信"></p>
 
-
+</form>
 
 </body>
 </html>
