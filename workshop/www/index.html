@@ -100,11 +100,11 @@
         <font size="6">アカウント登録</font>
         
         <form name="js">
-        <p>保護者氏名：姓 <input type="text" onKeyUp="kidname();" name="pa_fi_name" value="" size="7" style="font-size:12pt" >
-            名 <input type="text" name="pa_la_name" value="" size="7" style="font-size:12pt"><p>
-        <p>児童氏名：姓 <input type="text" name="kid_fi_name" value="" size="7" style="font-size:12pt">
-            名 <input type="text" name="kid_la_name" value="" size="7" style="font-size:12pt"><p>
-        <p>郵便番号：〒<input type="text" name="zip11" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+        <p>保護者氏名：姓 <input type="text" onKeyUp="kidname();" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
+            名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
+        <p>児童氏名：姓 <input type="text" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
+            名 <input type="text" name="kid_la_name" placeholder="例)小太郎" size="7" style="font-size:12pt"><p>
+        <p>郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
         <p>住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
         </form>
         
@@ -136,7 +136,7 @@
         </form>
         
         <form id="address" name="address">
-         <p style="display:inline;">アドレス：<input type="email" id="mail_address" name="mail_address" size="30" value="" style="font-size:12pt"><p>
+         <p style="display:inline;">アドレス：<input type="email" id="mail_address" name="mail_address" size="30" placeholder="例)takashi@axample.com" style="font-size:12pt"><p>
          </form>
         
         <form>

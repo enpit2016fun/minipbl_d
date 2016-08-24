@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        
+        <!--
+         Customize this policy to fit your own app's needs. For more guidance, see:
+         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+         Some notes:
+         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+         * Enable inline JS: add 'unsafe-inline' to default-src
+         -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+            
+    <!-- 以下、スタイルの指定 -->
+    <style type="text/css">
+    /*全体*/
+    body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #A7A7A7),
+    color-stop(0.51, #E4E4E4)
+    );
+    padding-top:20pt;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:20px;
+    height:100%;
+    margin:10px;
+    text-transform:uppercase;
+    width:100%;
+    }
+    h1{
+    text-align:center;
+    font-size:28pt;
+    padding-bottom:10pt;
+    }
+    h3{
+    text-align:center;
+    font-size:16pt;
+    padding-bottom:10pt;
+    }
+    #btn {
+    background: #EEE;
+    border-top: 3px solid #DDD;
+    border-left: 3px solid #DDD;
+    border-right: 3px solid #BBB;
+    border-bottom: 3px solid #BBB;
+    color:#111;
+    width: 200pt;
+    height:34pt;
+    font-size:13pt;
+    }
+    .button{
+    padding-top:0pt;
+    text-align:center;
+    }
+    p{
+        padding-left:20pt;
+    }
+    .jusyo{
+        text-align:center;
+        padding-top:10pt;
+    }
+    .other{
+        padding-left:300pt
+    }
+    .check{
+        text-align:center;
+        padding-top:10pt;
+    }
+    </style>
+    
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+        
+            <title>アカウント　住所変更</title>
+                <!--<script>
+                    function clickButton(){
+                        
+                    }
+
+                </script>-->
+    </head>
+    
+<body>
+    <h1>住所変更</h1>
+    <h3>以下の項目を記入してください。全ての項目が入力必須です。</h3>
+        
+        
+        <form name="js">
+            <p class="other">保護者氏名：姓 <input type="text" onKeyUp="kidname();" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
+                名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
+            <p class="jusyo">------------------------------  旧住所　------------------------------<p>
+            <p class="other">郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"><p>
+            <p class="other">住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
+        </form>
+        
+        <form>
+            <p class="jusyo">------------------------------ 新住所  ------------------------------<p>
+            <p class="other">郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"><p>
+            <p class="other">住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
+
+        </form>
+        
+        <p class="check">確認画面へ進む↓<p>
+        <div class="button">
+        <form>
+            <input type="button" id="btn" style="font-size:13pt; width:100pt; height:24pt" value="確認" onclick="clickButton()">
+        </form>
+        <div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
