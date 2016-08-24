@@ -1,7 +1,7 @@
 function kakunin(btnNo){
   if (btnNo == 1){
     link = "送信";
-    href = "file:///Users/obalab/enPiT/pbl_d/workshop/www/mail_complete.html";
+    href = "mail_complete.html";
   }else{
     link = "Google";
     href = "http://www.google.co.jp/";

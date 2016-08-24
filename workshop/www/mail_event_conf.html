@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" /> 
+	<meta http-equiv="content-style-type" content="text/css" /> 
+	<title>eventinfo</title>
+ 	</head>
+	 <body onload="pramWrite()">
+	 <h2>イベントの情報を確認してください</h2>
+        <form name="form1" action="#">
+        <p>
+            <textarea cols="40" rows="4" name="pram" style="border:0;overflow:visible" readonly="readonly"></textarea>
+        </p>
+        <input type="button" value="確定" onclick="location.href='mail_send.html'">
+        <input type="button" value="戻る" onclick="history.back()">
+        </form>
+        <script type="text/javascript" src="event_conf_recive.js"></script>
+    </body>
+</html>
