@@ -8,7 +8,19 @@
 
 <title>メール内容</title>
 <link rel="stylesheet" href="">
-<script src="send.js" type="text/javascript" charset="utf-8" ></script>
+<script src="send.js" type="text/javascript" charset="utf-8" >
+function dispTextarea(){
+
+	var tarea  = document.fm.tarea.value;
+	alert('入力した値は' + tarea + 'です' );
+
+}
+
+function frameClick() {
+      document.location.href = "file:///Users/obalab/enPiT/pbl_d/workshop/www/mail.html";
+    }
+
+</script>
 
 </head>
 <body>
@@ -34,10 +46,12 @@
 すのでご注意下さい(1 日 500 円）。 
 
 </textarea></p>
+
+<input type="button" value="確認" onclick="dispTextarea()">
 </form>
 <input type='hidden' id='hidden_data' value=document.fm.tarea.value>
     <button id='mail'>メール送信</button>
-
+<input type="button" name="yahoo" value="メール配信画面に戻る" onClick="frameClick();">
 </body>
 </html>
 
