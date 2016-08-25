@@ -22,8 +22,8 @@
 	  no = mail_address.replace( /no_brother：on/g , "兄弟の有無：いない" ) ;
 	  now = no.replace(  /now_brother：on/g , "兄弟の有無：在園"  ) ;
 	  was = now.replace(  /was_brother：on/g , "兄弟の有無：卒園"  ) ;
-	  send1 = was.replace( /send：1/g,"メール配信：希望する") ;
-	  send2 = was.replace( /send：2/g,"メール配信：希望しない") ;
+	  send1 = was.replace( /send：１/g, "メール配信：希望する" ) ;
+	  send2 = send1.replace( /send：２/g,"メール配信：希望しない") ;
 	  
 	  
 	  kekka = send2.split("&");
@@ -38,28 +38,17 @@
     以下の内容で登録します。<br/>
     
     <script type="text/javascript">
-      
-      document.write(decodeURI(kekka[0]));
-      document.write(decodeURI(kekka[1]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[2]));
-      document.write(decodeURI(kekka[3]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[4]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[5]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[6]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[7]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[8]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[9]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[10]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[11]));
+
+      n = kekka.length;
+
+      for(i=0;i<n;i++){
+		  if(i==0||i==2){
+		  document.write(decodeURI(kekka[i])+"  ");
+		  }else{
+		  document.write(decodeURI(kekka[i]));
+		  document.write("<br/>");
+		  }
+      }
     
     </script>
     
