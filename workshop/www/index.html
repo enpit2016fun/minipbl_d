@@ -33,61 +33,93 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 	<meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>つくしっこ保育園　アカウント登録</title>
+        
+    <style type="text/css">
+    /*全体*/
+    body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background:url(aozora2.jpg);
+    background-size:cover;
+    padding-top:20pt;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:20px;
+    height:100%;
+    margin:10px;
+    text-transform:uppercase;
+    width:100%;
+    }
+    h1{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    text-align:center;
+    font-size:28pt;
+    padding-bottom:10pt;
+    }
+    h3{
+    text-align:center;
+    font-size:16pt;
+    padding-bottom:10pt;
+    }
+    #btn {
+    background: #EEE;
+    border-top: 3px solid #DDD;
+    border-left: 3px solid #DDD;
+    border-right: 3px solid #BBB;
+    border-bottom: 3px solid #BBB;
+    border-radius: 8px;
+    color:#111;
+    width:120pt;
+    height:40pt;
+    font-size:13pt;
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    }
+    .button{
+    padding-top:15pt;
+    text-align:center;
+    }
+    p{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    padding-left:300pt;
+    }
+    </style>
+
+    <title>つくしのこ保育園　アカウント登録</title>
         
         <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
         <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         
-        <!--//////確認////////
-        ///登録ボタン押下/////-->
         <script>
-            //function clickButton(){
-                //window.open("tmp.html");
-              //  var pa_name=document.js.pa_fi_name.value; //親の名前
-              //  var kid_name=document.js.kid_fi_name.value; //
-              //  var jusyo=document.js.addr11.value; //
-              //  var gra_year=document.graduate.linkselect.value; //
-              //  var email=document.address.mail_address.value; //
-              //  window.alert("登録が完了した！Nice！！"+pa_name+"さん"+kid_name+jusyo+gra_year)
-           // }
-        
         //メール配信「希望」「希望しない」それぞれの挙動
         function onRadioButton(){
-            var check1=document.form1.radio1.checked;
             
+            var check1=document.forms.form1.radio1.checked;
             if(check1==true){
-                document.address["mail_address"].disabled = false; //希望するボタンが押されているとき、入力可能
+                document.getElementById("mail_address").style.display = 'block'; //希望するボタンが押されているとき、入力可能
             }else{
-                document.address["mail_address"].disabled = true; //希望しないボタンが押されているとき、入力不可能
+                document.getElementById("mail_address").style.display = 'none'; //希望しないボタンが押されているとき、入力不可能
             }
         }
         
         //親の名字が入力されたとき、子の名字にも反映
         function kidname(){
-            var tmp_name = document.js.pa_fi_name.value;
-            document.js.kid_fi_name.value = tmp_name;
+            var tmp_name = document.forms.form1.pa_fi_name.value;
+            document.forms.form1.kid_fi_name.value = tmp_name;
         }
         
         //在園にチェックのとき、以下の入力を受け付けない
         function chgcolor(){
             //在園中にチェックのとき
-            if(document.form1.Checkbox2.checked==true){
-            document.getElementsByName("send").style.color = "LightGrey";
-            document.getElementsByNema("address").style.color = "LightGrey";
-            //obj.style.backgroundColor = "#ffff00";
-            document.getElementsByName("mail_address").style.backgroundColor = "LightGrey";
-            document.form1.mail[1].checked=true;
-            document.form1.mail[0].disabled = true;
+            if(document.forms.form1.Checkbox2.checked==true){
+            document.getElementById("send").style.display = 'none';
             }
             //在園中にチェックがないとき
             else{
-            document.getElementsByName("send").style.color = "black";
-            document.getElementsByName("address").style.color = "black";
-            document.getElementsByName("mail_address").style.backgroundColor = "white";
-            document.form1.mail[0].checked = true;
-            document.form1.mail[0].disabled = false;
+            document.getElementById("send").style.display = 'block';
+            //document.forms.form1.radio1.checked = true;
+            //document.forms.form1.radio2.checked = false;
             }
             
         }
@@ -96,12 +128,12 @@
     </head>
     
     <body>
-        <font size="6">アカウント登録</font>
+        <h1>新規登録</h1>
 
-        <form name="js" method="get" action="Confirmation.html" id="form1">
-        <p>保護者氏名：姓 <input type="text" onKeyUp="kidname();" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
+        <form id="form1"　name="js" method="get" action="Confirmation.html">
+        <p>保護者氏名：姓 <input type="text" onKeyUp="kidname();" id="pa_fi_name" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
             名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
-        <p>児童氏名：姓 <input type="text" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
+        <p>児童氏名：姓 <input type="text" id="kid_fi_name" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
             名 <input type="text" name="kid_la_name" placeholder="例)小太郎" size="7" style="font-size:12pt"><p>
         <p>郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
         <p>住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
@@ -122,19 +154,20 @@
         <input id="Checkbox2" type="checkbox" name="now_brother" onclick="chgcolor();"/><label for="Checkbox2">通園中（我が保育園に）</label>
         <input id="Checkbox1" type="checkbox" name="was_brother"/><label for="Checkbox1">卒園</label>
         <p>
-      
-        
        
+       <div id="send">
         <p>メール配信希望：
-            <input id="radio1" type="radio" name="send" value="1" onchange="onRadioButton();" /><label for="radio1">希望する</label>
-            <input id="radio2" type="radio" name="send" value="2" onchange="onRadioButton();"/><label for="radio2">希望しない</label>
+            <input id="radio1" type="radio" name="haishin" value="1" checked onchange="onRadioButton();" /><label for="radio1">希望する</label>
+            <input id="radio2" type="radio" name="haishin" value="2" onchange="onRadioButton();"/><label for="radio2">希望しない</label>
             <p>
 
-         <p style="display:inline;">アドレス：<input type="email" id="mail_address" name="mail_address" size="30" placeholder="例)takashi@axample.com" style="font-size:12pt"><p>
-        
-        
-          <input type="submit"  style="font-size:13pt; width:100pt; height:24pt" value="確認画面へ進む" >
-	  
+         <p id="mail_address" style="display:inline;">アドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@axample.com"><p>
+        </div>
+       
+        <div class="button">
+            <input type="submit" id="btn" value="戻る" onclick="location.href='account_top.html'">
+            <input type="submit" id="btn" value="確認画面へ進む" >
+        </div>
         </form>
 
         <script type="text/javascript" src="cordova.js"></script>

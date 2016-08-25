@@ -41,17 +41,8 @@
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0, #A7A7A7),
-    color-stop(0.51, #E4E4E4)
-    );
+    background:url(aozora2.jpg);
+    background-size:cover;
     padding-top:20pt;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -62,11 +53,13 @@
     width:100%;
     }
     h1{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
     text-align:center;
     font-size:28pt;
     padding-bottom:10pt;
     }
     h3{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
     text-align:center;
     font-size:16pt;
     padding-bottom:10pt;
@@ -78,15 +71,17 @@
     border-right: 3px solid #BBB;
     border-bottom: 3px solid #BBB;
     color:#111;
-    width: 200pt;
-    height:34pt;
+    width: 120pt;
+    height:40pt;
     font-size:13pt;
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
     }
     .button{
     padding-top:0pt;
     text-align:center;
     }
     p{
+        font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
         padding-left:20pt;
     }
     .jusyo{
@@ -146,7 +141,8 @@
         <p class="check">確認画面へ進む↓<p>
         <div class="button">
         <form>
-            <input type="button" id="btn" style="font-size:13pt; width:100pt; height:24pt" value="確認" onclick="clickButton()">
+            <input type="button" id="btn" value="戻る" onclick="location.href='account_top.html'">
+            <input type="button" id="btn" value="確認" onclick="location.href='conf_change_address.html'">
         </form>
         <div>
         
