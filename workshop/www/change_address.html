@@ -75,6 +75,7 @@
     height:40pt;
     font-size:13pt;
     font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    cursor: pointer;
     }
     .button{
     padding-top:0pt;
@@ -107,12 +108,7 @@
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         
             <title>アカウント　住所変更</title>
-                <!--<script>
-                    function clickButton(){
-                        
-                    }
 
-                </script>-->
     </head>
     
 <body>
@@ -120,7 +116,7 @@
     <h3>以下の項目を記入してください。全ての項目が入力必須になります。</h3>
         
         
-        <form name="js">
+        <form name="js" method="get" action="conf_change_address.html">
             <p class="coment1">登録された方の氏名をご記入ください<p>
             <p class="other">保護者氏名：姓 <input type="text" onKeyUp="kidname();" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
                 名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
@@ -128,21 +124,18 @@
             <!--<p class="coment2">引越しをされる前の住所をご記入ください<p>-->
             <p class="other">郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"><p>
             <p class="other">住所： <input type="text" name="addr11" placeholder="お引越し前の住所をご記入ください" size="60" style="font-size:12pt"><p>
-        </form>
-        
-        <form>
+ 
             <p class="jusyo">------------------------------ 引越し後の住所  ------------------------------<p>
             <!--<p class="coment3">引越しをされた後の住所をご記入ください<p>-->
-            <p class="other">郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"><p>
-            <p class="other">住所： <input type="text" name="addr11"  placeholder="お引越し後の住所をご記入ください" size="60" style="font-size:12pt"><p>
-
-        </form>
+            <p class="other">郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr12','addr12');"><p>
+            <p class="other">住所： <input type="text" name="addr12"  placeholder="お引越し後の住所をご記入ください" size="60" style="font-size:12pt"><p>
         
         <p class="check">確認画面へ進む↓<p>
         <div class="button">
-        <form>
-            <input type="button" id="btn" value="戻る" onclick="location.href='account_top.html'">
-            <input type="button" id="btn" value="確認" onclick="location.href='conf_change_address.html'">
+            <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="戻る" onclick="location.href='account_top.html'">
+                <input type="submit" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="確認" onclick="location.href='conf_change_address.html'">
         </form>
         <div>
         

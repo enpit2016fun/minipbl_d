@@ -38,6 +38,7 @@
     height:40pt;
     font-size:15pt;
     font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    cursor: pointer;
     }
     .button{
     padding-top:20pt;
@@ -59,22 +60,16 @@
     get_text = document.location.search;
     text = get_text.substring(1,get_text.length);
     
-    koron = text.replace( /=/g , "：" ) ;
-    pa_sei = koron.replace( /pa_fi_name/g , "保護者氏名" ) ;
-    pa_mei = pa_sei.replace( /pa_la_name：/g , "" ) ;
-    kid_sei = pa_mei.replace( /kid_fi_name/g , "園児氏名" ) ;
-    kid_mei = kid_sei.replace( /kid_la_name：/g , "" ) ;
-    zip11 = kid_mei.replace( /zip11/g , "〒" ) ;
+    koron = text.replace( /=/g , ":" );
+    pa_sei = koron.replace( /pa_fi_name/g ,"保護者氏名" );
+    pa_mei = pa_sei.replace( /pa_la_name:/g , "" ) ;
+    zip11 = pa_mei.replace( /zip11/g , "〒" ) ;
     addr11 = zip11.replace( /addr11/g , "住所" ) ;
-    linkselect = addr11.replace( /linkselect/g , "卒業年" ) ;
-    mail_address = linkselect.replace( /mail_address/g , "メールアドレス" ) ;
-    no = mail_address.replace( /no_brother：on/g , "兄弟の有無：いない" ) ;
-    now = no.replace(  /now_brother：on/g , "兄弟の有無：在園"  ) ;
-    was = now.replace(  /was_brother：on/g , "兄弟の有無：卒園"  ) ;
-    send1 = was.replace( /send：1/g,"メール配信：希望する") ;
-    send2 = was.replace( /send：2/g,"メール配信：希望しない") ;
-                    
-    kekka = send2.split("&");
+    addr12 = addr11.replace( /addr12/g , "住所" ) ;
+    
+    
+
+    kekka = addr12.split("&");
      
     //-->
     </script>
@@ -89,32 +84,30 @@
     document.write(decodeURI(kekka[0]));
     document.write(decodeURI(kekka[1]));
     document.write("<br/>");
+     document.write("<br/>");
+    document.write("---------- 旧住所 ---------");
+    document.write("<br/>");
     document.write(decodeURI(kekka[2]));
+    document.write("<br/>");
     document.write(decodeURI(kekka[3]));
+    document.write("<br/>");
+    document.write("<br/>");
+    document.write("---------- 新住所 ---------");
     document.write("<br/>");
     document.write(decodeURI(kekka[4]));
     document.write("<br/>");
     document.write(decodeURI(kekka[5]));
     document.write("<br/>");
-    document.write(decodeURI(kekka[6]));
-    document.write("<br/>");
-    document.write(decodeURI(kekka[7]));
-    document.write("<br/>");
-    document.write(decodeURI(kekka[8]));
-    document.write("<br/>");
-    document.write(decodeURI(kekka[9]));
-    document.write("<br/>");
-    document.write(decodeURI(kekka[10]));
-    document.write("<br/>");
-    document.write(decodeURI(kekka[11]));
-                    
+
     </script>
     <div>
                     
     <div class="button">
     <form>
-    <input type="button" id="btn" value="修正" onclick="history.back();">
-    <input type="button" id="btn" value="OK!" onclick="location.href='chg_address_complete.html'">
+        <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; value="修正" onclick="history.back();">
+        <input type="button" id="btn"  onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor="";value="OK!" onclick="location.href='chg_address_complete.html'">
     </form>
     <div>
 </body>

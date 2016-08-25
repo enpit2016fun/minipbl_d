@@ -49,6 +49,7 @@
     width: 200pt;
     height:40pt;
     font-size:18pt;
+    cursor: pointer;
     }
     .button{
     padding-top:10pt;
@@ -62,7 +63,8 @@
     
     <div class="button">
     <form>
-    <p><input type="button" id="btn" value="終了" onclick="location.href='account_top.html'"><p>
+        <p><input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; value="終了" onclick="location.href='account_top.html'"><p>
     </form>
     </div>
                             

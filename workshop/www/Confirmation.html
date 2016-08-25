@@ -38,6 +38,7 @@
     height:40pt;
     font-size:15pt;
     font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    cursor: pointer;
     }
     .button{
     padding-top:20pt;
@@ -67,7 +68,8 @@
 	  zip11 = kid_mei.replace( /zip11/g , "〒" ) ;
 	  addr11 = zip11.replace( /addr11/g , "住所" ) ;
 	  linkselect = addr11.replace( /linkselect/g , "卒業年" ) ;
-	  mail_address = linkselect.replace( /mail_address/g , "メールアドレス" ) ;
+      haishin = linkselect.replace( /haishin/g , "メール配信希望");
+	  mail_address = haishin.replace( /mail_address/g , "メールアドレス" ) ;
 	  no = mail_address.replace( /no_brother：on/g , "兄弟の有無：いない" ) ;
 	  now = no.replace(  /now_brother：on/g , "兄弟の有無：在園"  ) ;
 	  was = now.replace(  /was_brother：on/g , "兄弟の有無：卒園"  ) ;
@@ -116,8 +118,10 @@
         
     <div class="button">
     <form>
-        <input type="button" id="btn" value="修正" onclick="history.back();">
-        <input type="button" id="btn" value="OK!" onclick="location.href='regist_complete.html'">
+        <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; value="修正" onclick="history.back();">
+        <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; value="OK!" onclick="location.href='regist_complete.html'">
     </form>
     <div>
   </body>

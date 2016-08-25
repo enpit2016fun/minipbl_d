@@ -74,6 +74,7 @@
     height:40pt;
     font-size:13pt;
     font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    cursor: pointer;
     }
     .button{
     padding-top:15pt;
@@ -135,8 +136,8 @@
             名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
         <p>児童氏名：姓 <input type="text" id="kid_fi_name" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
             名 <input type="text" name="kid_la_name" placeholder="例)小太郎" size="7" style="font-size:12pt"><p>
-        <p>郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
-        <p>住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
+        <p>郵便番号：〒<input type="text" name="zip11" placeholder="例)0000000" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+        <p>住所： <input type="text" name="addr11" placeholder="番地、アパート名まで記入してください" size="60" style="font-size:12pt"><p>
 
         	     
           <p id="graduate">卒業年：
@@ -161,12 +162,14 @@
             <input id="radio2" type="radio" name="haishin" value="2" onchange="onRadioButton();"/><label for="radio2">希望しない</label>
             <p>
 
-         <p id="mail_address" style="display:inline;">アドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@axample.com"><p>
+         <p id="mail_address" style="display:inline;">アドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@example.com"><p>
         </div>
        
         <div class="button">
-            <input type="submit" id="btn" value="戻る" onclick="location.href='account_top.html'">
-            <input type="submit" id="btn" value="確認画面へ進む" >
+            <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="戻る" onclick="location.href='account_top.html'">
+            <input type="submit" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="確認画面へ進む" >
         </div>
         </form>
 
