@@ -112,12 +112,14 @@
             //在園中にチェックのとき
             if(document.forms.form1.Checkbox2.checked==true){
             document.getElementById("send").style.display = 'none';
+            document.forms.form1.radio1.checked = false;
+            document.forms.form1.radio2.checked = true;
             }
             //在園中にチェックがないとき
             else{
             document.getElementById("send").style.display = 'block';
-            //document.forms.form1.radio1.checked = true;
-            //document.forms.form1.radio2.checked = false;
+            document.forms.form1.radio1.checked = true;
+            document.forms.form1.radio2.checked = false;
             }
             
         }
