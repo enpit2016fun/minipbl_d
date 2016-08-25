@@ -83,6 +83,9 @@
         height:40pt;
         font-size:18pt;
         cursor: pointer;
+        line-height:30pt;
+        display: table-cell;
+        vertical-align: middle;
     }
     .button{
         padding-top:10pt;
@@ -91,20 +94,26 @@
     .ue{
         padding-top:10pt;
     }
+    .sotuen{
+        padding-left:800pt;
+    }
     </style>
     
     <body>
-        <h1>つくしっこ登録</h1>
-        
+        <h1><img src='tukushi_40.jpg'> つくしっこ登録 <img src='tukushi_40.jpg'></h1>
+
         <div class="button">
         <form>
             <h3>↓新しく登録される方はこちら↓</h3>
-            <p><input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
-                onmouseout=this.style.backgroundColor=""; value="新規作成" onclick="location.href='index.html'"><p>
+            <p><button type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='index.html'"><img src='badge2.png'>　　新規作成</button><p>
             <h3 class="ue">↓お引越しされた方はこちら↓</h3>
-            <p><input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
-                onmouseout=this.style.backgroundColor=""; value="住所変更" onclick="location.href='change_address.html'"><p>
+            <p><button type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='change_address.html'"><img src='home.png'>　　住所変更</button><p>
         </form>
+        </div>
+        <div class="sotuen">
+        <img src='sotuen_260.png'>
         </div>
         
     </body>

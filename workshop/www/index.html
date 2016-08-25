@@ -137,10 +137,10 @@
         <p>児童氏名：姓 <input type="text" id="kid_fi_name" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
             名 <input type="text" name="kid_la_name" placeholder="例)小太郎" size="7" style="font-size:12pt"><p>
         <p>郵便番号：〒<input type="text" name="zip11" placeholder="例)0000000" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
-        <p>住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
+        <p>住所： <input type="text" name="addr11" placeholder="番地、アパート名までご記入ください"  size="60" style="font-size:12pt"><p>
 
         	     
-          <p id="graduate">卒業年：
+          <p id="graduate">卒園した年：
             <select name="linkselect" style="font-size:12pt;wigth:20pt;height:20pt">
                 <option value="2016">2016年</option>
                 <option value="2015">2015年</option>
@@ -148,21 +148,24 @@
                 <option value="2013">2013年</option>
                 <option value="2012">2012年</option>
                 <option value="2011">2011年</option>
-            </select><p>
+            </select>
+            （お子様がご卒園された年を選択ください）<p>
         
         <p>兄弟姉妹の有無：
         <input id="Checkbox1" type="checkbox" name="no_brother"/><label for="Checkbox1">いない</label>
-        <input id="Checkbox2" type="checkbox" name="now_brother" onclick="chgcolor();"/><label for="Checkbox2">通園中（我が保育園に）</label>
+        <input id="Checkbox2" type="checkbox" name="now_brother" onclick="chgcolor();"/><label for="Checkbox2">通園中（つくしのこ保育園）</label>
         <input id="Checkbox1" type="checkbox" name="was_brother"/><label for="Checkbox1">卒園</label>
         <p>
-       
+        <p>※ その他の項目に当てはまる場合は、チェックなしでかまいません<p>
+       <p>------------------------------------------------------------<p>
        <div id="send">
         <p>メール配信希望：
             <input id="radio1" type="radio" name="haishin" value="1" checked onchange="onRadioButton();" /><label for="radio1">希望する</label>
             <input id="radio2" type="radio" name="haishin" value="2" onchange="onRadioButton();"/><label for="radio2">希望しない</label>
             <p>
 
-         <p id="mail_address" style="display:inline;">アドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@axample.com"><p>
+         <p id="mail_address" style="display:inline;">メールアドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@axample.com"><p>
+             ※ メール配信の希望は、後から変更することができます
         </div>
        
         <div class="button">
