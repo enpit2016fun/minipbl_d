@@ -87,7 +87,25 @@
         display: table-cell;
         vertical-align: middle;
     }
-    .button{
+    #btn2 {
+        background: #EEE;
+        border-top: 3px solid #DDD;
+        border-left: 3px solid #DDD;
+        border-right: 3px solid #BBB;
+        border-bottom: 3px solid #BBB;
+        border-radius: 8px;
+        /*-moz-border-radius: 8px;*/
+        font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+        -webkit-border-radius: 8px;
+        color:#111;
+        width: 240pt;
+        height:40pt;
+        font-size:18pt;
+        cursor: pointer;
+        line-height:30pt;
+        display: table-cell;
+        vertical-align: middle;
+    }    .button{
         padding-top:10pt;
          text-align:center;
     }
@@ -113,6 +131,9 @@
             <h3 class="ue">↓お引越しされた方はこちら↓</h3>
             <p><button type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
                 onmouseout=this.style.backgroundColor=""; onclick="location.href='change_address.html'"><img src='home.png'>　　住所変更</button><p>
+            <h3 class="ue">↓メール配信希望の変更はこちら↓</h3>
+            <p><button type="button" id="btn2" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='noimage.html'"><img src='mail.png'>　　メール配信の変更</button><p>
         </form>
         </div>
         <div class="sotuen">
