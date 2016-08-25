@@ -82,6 +82,7 @@
         width: 200pt;
         height:40pt;
         font-size:18pt;
+        cursor: pointer;
     }
     .button{
         padding-top:10pt;
@@ -98,9 +99,11 @@
         <div class="button">
         <form>
             <h3>↓新しく登録される方はこちら↓</h3>
-            <p><input type="button" id="btn" value="新規作成" onclick="location.href='index.html'"><p>
+            <p><input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="新規作成" onclick="location.href='index.html'"><p>
             <h3 class="ue">↓お引越しされた方はこちら↓</h3>
-            <p><input type="button" id="btn" value="住所変更" onclick="location.href='change_address.html'"><p>
+            <p><input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="住所変更" onclick="location.href='change_address.html'"><p>
         </form>
         </div>
         

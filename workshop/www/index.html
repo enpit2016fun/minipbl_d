@@ -74,6 +74,7 @@
     height:40pt;
     font-size:13pt;
     font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    cursor: pointer;
     }
     .button{
     padding-top:15pt;
@@ -165,8 +166,10 @@
         </div>
        
         <div class="button">
-            <input type="submit" id="btn" value="戻る" onclick="location.href='account_top.html'">
-            <input type="submit" id="btn" value="確認画面へ進む" >
+            <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="戻る" onclick="location.href='account_top.html'">
+            <input type="submit" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; value="確認画面へ進む" >
         </div>
         </form>
     </body>
