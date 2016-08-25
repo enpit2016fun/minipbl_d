@@ -7,8 +7,12 @@
     <link href="css/index.css" rel="stylesheet" type="text/css">
  	</head>
 	<body>
+        <h1>メール配信しますか？<h1>
 		<form name="frm" method="post" action="result.html">
-        <input type="button" onclick="location.href='mail_event_list.html'" value="メール配信" />
+            <button type="button" id="btn4" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; onclick="location.href='mail_event_list.html'"><img src='mail.png' /> メールを配信する</button><br><br>
+            <button type="button" id="btn4" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; onclick="location.href='byby.html'"><img src='error.png'> やめる</button>
         </form>
     </body>
 </html>
