@@ -68,15 +68,13 @@
 	  zip11 = kid_mei.replace( /zip11/g , "〒" ) ;
 	  addr11 = zip11.replace( /addr11/g , "住所" ) ;
 	  linkselect = addr11.replace( /linkselect/g , "卒業年" ) ;
-      haishin = linkselect.replace( /haishin/g , "メール配信希望");
+	  haishin = linkselect.replace( /haishin：1/g , "メール配信：希望する");
 	  mail_address = haishin.replace( /mail_address/g , "メールアドレス" ) ;
 	  no = mail_address.replace( /no_brother：on/g , "兄弟の有無：いない" ) ;
 	  now = no.replace(  /now_brother：on/g , "兄弟の有無：在園"  ) ;
 	  was = now.replace(  /was_brother：on/g , "兄弟の有無：卒園"  ) ;
-	  send1 = was.replace( /send：1/g,"メール配信：希望する") ;
-	  send2 = was.replace( /send：2/g,"メール配信：希望しない") ;
-	  
-	  
+	  send2 = was.replace( /haishin：2/g,"メール配信：希望しない") ;
+
 	  kekka = send2.split("&");
 	  
 	  //-->
@@ -89,30 +87,20 @@
     <h1>以下の内容で登録しますか?<h1>
     
     <div class="naiyo">
-    <script type="text/javascript">
+      <script type="text/javascript">
+
+	n = kekka.length;
+	for(i=0;i<n;i++){
+	if(i==0||i==2){
+		   document.write(decodeURI(kekka[i])+"  "); 
+	}else{
+		    document.write(decodeURI(kekka[i]));
+		    document.write("<br/>");
+	}
+
+	}
+	
       
-      document.write(decodeURI(kekka[0]));
-      document.write(decodeURI(kekka[1]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[2]));
-      document.write(decodeURI(kekka[3]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[4]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[5]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[6]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[7]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[8]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[9]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[10]));
-      document.write("<br/>");
-      document.write(decodeURI(kekka[11]));
-    
     </script>
     <div>
         
