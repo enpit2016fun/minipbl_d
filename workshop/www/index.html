@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+          -->
+	
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<meta charset="utf-8">
+        
+    <style type="text/css">
+    /*全体*/
+    body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background:url(aozora2.jpg);
+    background-size:cover;
+    padding-top:20pt;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:20px;
+    height:100%;
+    margin:10px;
+    text-transform:uppercase;
+    width:100%;
+    }
+    h1{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    text-align:center;
+    font-size:28pt;
+    padding-bottom:10pt;
+    }
+    h3{
+    text-align:center;
+    font-size:16pt;
+    padding-bottom:10pt;
+    }
+    #btn {
+    background: #EEE;
+    border-top: 3px solid #DDD;
+    border-left: 3px solid #DDD;
+    border-right: 3px solid #BBB;
+    border-bottom: 3px solid #BBB;
+    border-radius: 8px;
+    color:#111;
+    width:120pt;
+    height:40pt;
+    font-size:13pt;
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    }
+    .button{
+    padding-top:15pt;
+    text-align:center;
+    }
+    p{
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    padding-left:300pt;
+    }
+    </style>
+
+    <title>つくしのこ保育園　アカウント登録</title>
+        
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script> 
+        
+        <script>
+        //メール配信「希望」「希望しない」それぞれの挙動
+        function onRadioButton(){
+            
+            var check1=document.forms.form1.radio1.checked;
+            if(check1==true){
+                document.getElementById("mail_address").style.display = 'block'; //希望するボタンが押されているとき、入力可能
+            }else{
+                document.getElementById("mail_address").style.display = 'none'; //希望しないボタンが押されているとき、入力不可能
+            }
+        }
+        
+        //親の名字が入力されたとき、子の名字にも反映
+        function kidname(){
+            var tmp_name = document.forms.form1.pa_fi_name.value;
+            document.forms.form1.kid_fi_name.value = tmp_name;
+        }
+        
+        //在園にチェックのとき、以下の入力を受け付けない
+        function chgcolor(){
+            //在園中にチェックのとき
+            if(document.forms.form1.Checkbox2.checked==true){
+            document.getElementById("send").style.display = 'none';
+            document.forms.form1.radio1.checked = false;
+            document.forms.form1.radio2.checked = true;
+            }
+            //在園中にチェックがないとき
+            else{
+            document.getElementById("send").style.display = 'block';
+            document.forms.form1.radio1.checked = true;
+            document.forms.form1.radio2.checked = false;
+            }
+            
+        }
+        
+    </script>
+    </head>
+    
+    <body>
+        <h1>新規登録</h1>
+
+        <form id="form1"　name="js" method="get" action="Confirmation.html">
+        <p>保護者氏名：姓 <input type="text" onKeyUp="kidname();" id="pa_fi_name" name="pa_fi_name" placeholder="例)山田" size="7" style="font-size:12pt" >
+            名 <input type="text" name="pa_la_name" placeholder="例)太郎" size="7" style="font-size:12pt"><p>
+        <p>児童氏名：姓 <input type="text" id="kid_fi_name" name="kid_fi_name" placeholder="例)山田" size="7" style="font-size:12pt">
+            名 <input type="text" name="kid_la_name" placeholder="例)小太郎" size="7" style="font-size:12pt"><p>
+        <p>郵便番号：〒<input type="text" name="zip11" placeholder="ハイフン無し" size="10" maxlength="8" style="font-size:12pt" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+        <p>住所： <input type="text" name="addr11" size="60" style="font-size:12pt"><p>
+
+        	     
+          <p id="graduate">卒業年：
+            <select name="linkselect" style="font-size:12pt;wigth:20pt;height:20pt">
+                <option value="2016">2016年</option>
+                <option value="2015">2015年</option>
+                <option value="2014">2014年</option>
+                <option value="2013">2013年</option>
+                <option value="2012">2012年</option>
+                <option value="2011">2011年</option>
+            </select><p>
+        
+        <p>兄弟姉妹の有無：
+        <input id="Checkbox1" type="checkbox" name="no_brother"/><label for="Checkbox1">いない</label>
+        <input id="Checkbox2" type="checkbox" name="now_brother" onclick="chgcolor();"/><label for="Checkbox2">通園中（我が保育園に）</label>
+        <input id="Checkbox1" type="checkbox" name="was_brother"/><label for="Checkbox1">卒園</label>
+        <p>
+       
+       <div id="send">
+        <p>メール配信希望：
+            <input id="radio1" type="radio" name="haishin" value="1" checked onchange="onRadioButton();" /><label for="radio1">希望する</label>
+            <input id="radio2" type="radio" name="haishin" value="2" onchange="onRadioButton();"/><label for="radio2">希望しない</label>
+            <p>
+
+         <p id="mail_address" style="display:inline;">アドレス：<input type="text" name="mail_address" size="30" style="font-size:12pt"placeholder="例)takashi@axample.com"><p>
+        </div>
+       
+        <div class="button">
+            <input type="submit" id="btn" value="戻る" onclick="location.href='account_top.html'">
+            <input type="submit" id="btn" value="確認画面へ進む" >
+        </div>
+        </form>
+    </body>
+</html>
