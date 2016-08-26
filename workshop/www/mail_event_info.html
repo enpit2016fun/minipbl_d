@@ -10,10 +10,10 @@
 	<h1>詳しい情報を入力してください</h1>
 		<form action="#" method="get" accept-charset="" name="form" onsubmit="return event_send();">
 			<p>イベント名：<input required type="text" style="font-size:14pt" placeholder="例）つくしっこまつり" value="" name="eventname" size="40" maxlength="20"></p>
-			<p>日時：<input required type="text" style="font-size:14pt" placeholder="例）８月２６日（金）" value="" name="eventdate" size="40" maxlength="20"></p>
+			<p>日時：<input required type="date" style="font-size:14pt" placeholder="2016-08-26" value="" name="eventdate" size="40" ></p>
             <p>場所：<input required type="text" style="font-size:14pt" placeholder="例）北海道函館市中島町25番18号" value="" name="eventstate" size="40" maxlength="20"></p>
 			<div align="center">
-            <textarea class="eventinfo" style="font-size:14pt" name="eventinfo" rows="8" cols="80">イベント内容の説明</textarea><div>
+            <textarea class="eventinfo" style="font-size:14pt" name="eventinfo" rows="8" cols="80" placeholder="イベント内容の詳しい説明"></textarea><div>
             <p><input type="submit" id="btn2" onmouseover=this.style.backgroundColor='silver';
                 onmouseout=this.style.backgroundColor=""; value="決定">
                 <input type="button" id="btn2" onmouseover=this.style.backgroundColor='silver';

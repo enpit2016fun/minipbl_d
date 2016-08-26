@@ -41,7 +41,7 @@ if(key["eventstate"]){
 if(key["eventinfo"]){
 	eventinfo=decodeURI(key["eventinfo"]);
 }else{
-	eventinfo="null"
+	eventinfo=""
 }
 
 
