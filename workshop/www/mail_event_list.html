@@ -4,11 +4,12 @@
 	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" /> 
 	<meta http-equiv="content-style-type" content="text/css" /> 
 	<title>mail_event_list</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
  	</head>
  	<body>
 		<form name="eventlist">
-		  <p>イベントを選択してください</p>
-			<select name="event">
+		  <h1>イベントを選択してください<h1>
+			<select name="event" style="font-size:14pt;wigth:20pt;height:22pt">
 				<option value="">イベント選択</option>
 				<option value=""></option>
 				<option value=""></option>
@@ -32,7 +33,13 @@
 		</form>
 		<script type = "text/javascript" src="eventlist.js"></script>
 		<br>
-		<input type = "button" value="このイベントの詳細を編集" onclick="location.href='mail_event_info.html'"/>
-		<input type = "button" value="新規作成" onclick="location.href='mail_event_info.html'"/>
+        <div class="ten_akeru">
+        <input type = "button" id="btn3" onmouseover=this.style.backgroundColor='silver';
+        onmouseout=this.style.backgroundColor=""; value="TOP" onclick="location.href='mail.html'"/>
+        <input type = "button" id="btn3" onmouseover=this.style.backgroundColor='silver';
+        onmouseout=this.style.backgroundColor=""; value="選択したイベントの詳細を編集" onclick="location.href='mail_event_info.html'"/>
+        <button type = "button" id="btn3" onmouseover=this.style.backgroundColor='silver';
+        onmouseout=this.style.backgroundColor=""; onclick="location.href='mail_event_info.html'">新規作成</button>
+        <div>
 	</body>
 </html>

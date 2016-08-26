@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
                 
     <style type="text/css">
@@ -42,7 +42,7 @@
     cursor: pointer;
     }
     .button{
-     color:#111;
+    color:#111;
     padding-top:10pt;
     text-align:center;
     }
@@ -55,8 +55,8 @@
     }
     </style>
     
-    <title>住所変更確認画面</title>
-    
+    <title>メール配信変更確認画面</title>
+                
     <script type="text/javascript">
     <!---
     get_text = document.location.search;
@@ -64,19 +64,18 @@
     
     koron = text.replace( /=/g , ":" );
     pa_sei = koron.replace( /pa_fi_name/g ,"保護者氏名" );
-    pa_mei = pa_sei.replace( /pa_la_name:/g , "" ) ;
+    pa_mei = pa_sei.replace( /pa_la_name:/g , " " ) ;
     zip11 = pa_mei.replace( /zip11/g , "〒" ) ;
     addr11 = zip11.replace( /addr11/g , "住所" ) ;
-    addr12 = addr11.replace( /addr12/g , "住所" ) ;
+    haishin = addr11.replace( /haishin:1/g , "メール配信:希望する" );
+    haishin2 = haishin.replace( /haishin:2/g , "メール配信:希望しない")
     
-    
-
-    kekka = addr12.split("&");
-     
+    kekka = haishin2.split("&");
+                    
     //-->
     </script>
     </head>
-
+    
     <body>
     <h1>以下の内容に変更します<h1>
             
@@ -86,32 +85,25 @@
     document.write(decodeURI(kekka[0]));
     document.write(decodeURI(kekka[1]));
     document.write("<br/>");
-     document.write("<br/>");
-    document.write("---------- 旧住所 ---------");
-    document.write("<br/>");
     document.write(decodeURI(kekka[2]));
     document.write("<br/>");
     document.write(decodeURI(kekka[3]));
     document.write("<br/>");
     document.write("<br/>");
-    document.write("---------- 新住所 ---------");
-    document.write("<br/>");
     document.write(decodeURI(kekka[4]));
     document.write("<br/>");
-    document.write(decodeURI(kekka[5]));
-    document.write("<br/>");
-
+                    
     </script>
     <div>
-        <br>
-                    <h2>よろしいですか？<h2>
+    <br>
+    <h2>よろしいですか？<h2>
     <div class="button">
     <form>
-        <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
-            onmouseout=this.style.backgroundColor=""; value="修正" onclick="history.back();">
-        <input type="button" id="btn"  onmouseover=this.style.backgroundColor='silver';
-            onmouseout=this.style.backgroundColor=""; value="OK!" onclick="location.href='chg_address_complete.html'">
+    <input type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+        onmouseout=this.style.backgroundColor=""; value="修正" onclick="history.back();">
+    <input type="button" id="btn"  onmouseover=this.style.backgroundColor='silver';
+                                        onmouseout=this.style.backgroundColor=""; value="OK!" onclick="location.href='chg_mail_receive.html'">
     </form>
     <div>
-</body>
+    </body>
 </html>

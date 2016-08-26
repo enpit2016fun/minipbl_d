@@ -3,14 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+        
   <script type="text/javascript">
     function frameClick() {
       document.location.href = "file:///Users/obalab/enPiT/pbl_d/workshop/www/mail.html";
     }
-    document.write("メール送信が完了しました");
+    //document.write("メール送信が完了しました");
   </script>
 </head>
 <body>
-<input type="button" name="yahoo" value="メール配信画面に戻る" onClick="frameClick();">
+    <h1>メールが送信されました<h1>
+        <div class="button">
+            <input type="button" id="btn1" onmouseover=this.style.backgroundColor='silver';
+            onmouseout=this.style.backgroundColor=""; name="yahoo" value="メール配信画面に戻る" onClick="frameClick();">
+        <div>
 </body>
 </html>

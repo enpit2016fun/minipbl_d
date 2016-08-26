@@ -82,27 +82,64 @@
         width: 200pt;
         height:40pt;
         font-size:18pt;
+        cursor: pointer;
+        line-height:30pt;
+        display: table-cell;
+        vertical-align: middle;
     }
-    .button{
+    #btn2 {
+        background: #EEE;
+        border-top: 3px solid #DDD;
+        border-left: 3px solid #DDD;
+        border-right: 3px solid #BBB;
+        border-bottom: 3px solid #BBB;
+        border-radius: 8px;
+        /*-moz-border-radius: 8px;*/
+        font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+        -webkit-border-radius: 8px;
+        color:#111;
+        width: 240pt;
+        height:40pt;
+        font-size:18pt;
+        cursor: pointer;
+        line-height:30pt;
+        display: table-cell;
+        vertical-align: middle;
+    }    .button{
         padding-top:10pt;
          text-align:center;
     }
     .ue{
         padding-top:10pt;
     }
+    .sotuen{
+        padding-top:15pt;
+        text-align:center;
+    }
+
     </style>
     
     <body>
-        <h1>つくしっこ登録</h1>
-        
+        <div class="allb">
+        <h1><img src='tukushi_40.jpg'> つくしっこ登録 <img src='tukushi_40.jpg'></h1>
+
         <div class="button">
         <form>
             <h3>↓新しく登録される方はこちら↓</h3>
-            <p><input type="button" id="btn" value="新規作成" onclick="location.href='index.html'"><p>
+            <p><button type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='index.html'"><img src='badge2.png'>　　新規作成</button><p>
             <h3 class="ue">↓お引越しされた方はこちら↓</h3>
-            <p><input type="button" id="btn" value="住所変更" onclick="location.href='change_address.html'"><p>
+            <p><button type="button" id="btn" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='change_address.html'"><img src='home.png'>　　住所変更</button><p>
+            <h3 class="ue">↓メール配信希望の変更はこちら↓</h3>
+            <p><button type="button" id="btn2" onmouseover=this.style.backgroundColor='silver';
+                onmouseout=this.style.backgroundColor=""; onclick="location.href='mail_request.html'"><img src='mail.png'>　　メール配信の変更</button><p>
         </form>
         </div>
+        <div class="sotuen">
+        <img src='net_kid.png' class="abu">
+        </div>
         
+        <div>
     </body>
 </html>

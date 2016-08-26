@@ -4,7 +4,7 @@ window.onload = function() {
    * メールに記載する情報を格納する変数
    */
     var address, ccAddress, subject, body, hiddenData, mail;
-    var sendmail = document.getElementById('mail');
+    var sendmail = document.getElementById('btn');
 
     sendmail.onclick = function() {
 
